@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Trevor Salom's CSE 110 Lab 2 Page</title>
+		<meta name="author" content="Trevor Salom">
+		<link href="main.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<header>
+			<h1>CSE 110 Lab 2 Page</h1>
+			<h2>Trevor Salom</h2>
+			<h3>Winter 2021</h3>
+			<nav>
+				<a href="/html/">Section I</a> |
+				<a href="/css/">Section II</a> |
+				<a href="/js/">Section III</a> |
+				<a href="/python/">Section IV</a>
+			</nav>
+			<hr />
+		</header>
+		<main>
+			<article>
+				<h2>An Examination of HTML</h2>
+				<section>
+					<h4>Section I</h4>
+					<p>This is the <em>first</em> section of my page for this lab.<br /> Who knew coming up with content could be so hard?</p>
+				</section>
+				<section>
+					<h4>Section II</h4>
+					<p>Here's section II. As a quick aside:</p>
+					<aside>
+						<h5>An HTML Aside</h5>
+						<p>Why are all the w3 schools examples about epcot?</p>
+					</aside>
+				</section>
+				<section>
+					<h4>Section III</h4>
+					<p>Moving on to the <b>third section</b>. So I've discovered that you can't just copy and paste emoji into HTML, you have to work a little harder: &#9968;</p>
+					<details>
+						<summary>Thoughts on Emoji</summary>
+						<p>I don't use a whole lot of emoji, but &#9968; is probably one of my favorites. Such a shame it doesn't have a whole of practical uses.</p>
+					</details>
+				</section>
+				<section>
+					<h4>Section IV</h4>
+					<p>Speaking of mountains, here's a list of some mountain heights.</p>
+					<ul>
+						<li>Mt. Rainier, 14,411 ft</li>
+						<li>Mt. Whitney, 14,505 ft</li>
+						<li>Mt. Shasta, 14,179 ft</li>
+					</ul>
+					<p>Actually, let's order those mountains by height:</p>
+					<ol>
+						<li>Mt. Whitney, 14,505 ft</li>
+						<li>Mt. Rainier, 14,411 ft</li>
+						<li>Mt. Shasta, 14,179 ft</li>
+					</ol>
+				</section>
+				<section>
+					<h4>Section V</h4>
+					<p>We can even put those mountains in a table</p>
+					<table>
+						<colgroup>
+							<col span="2" style="background-color:#bdc3c7">
+						</colgroup>
+						<tr>
+							<th>Mountain</th>
+							<th>Height (ft)</th>
+						</tr>
+						<tr>
+							<td>Mt. Whitney</td><td>14,505</td>
+						</tr>
+						<tr>
+							<td>Mt. Rainier</td><td>14,411</td>
+						</tr>
+						<tr>
+							<td>Mt. Shasta</td><td>14,179</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h4>Section VI</h4>
+					<p>If you're curious about how I made that table in the previous section look so great, I used this CSS:</p>
+					<div class="code-block">
+						<pre><code>table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+	background-color: #f6f6f6;
+}</code></pre>
+					</div>
+					<p>Plus a <code>colgroup</code> tag.</p>
+				</section>
+				<section>
+					<h4>Section VII</h4>
+					<p>This page is missing some multimedia. Let's add some images from when I visited those mountains.</p>
+					<details>
+						<summary>Mt. Whitney</summary>
+						<picture>
+							<img src="whitney.jpg" alt="whitney"/>
+						</picture>
+					</details>
+					<details>
+						<summary>Mt. Rainier</summary>
+						<picture>
+							<img src="rainier.jpg" alt="rainier"/>
+						</picture>
+					</details>
+					<details>
+						<summary>Mt. Shasta</summary>
+						<picture>
+							<img src="shasta.jpg" alt="shasta"/>
+						</picture>
+					</details>
+					<p>And here is a bonus video from another mountain if you're interested:</p>
+					<details>
+						<summary>El Capitan</summary>
+						<video width="500" controls>
+							<source src="elcap.mp4" type="video/mp4">
+							Something went wrong.
+						</video>
+					</details>
+				</section>
+				<section>
+					<h4>Section VIII</h4>
+					<p>Speaking of multimedia, the HTML canvas tag is pretty cool</p>
+					<canvas id="canvas" width="100" height="100" style="border:1px solid black;">
+					</canvas>
+					<script>
+						var c = document.getElementById("canvas");
+						var ctx = c.getContext("2d");
+						ctx.font = "30px Courier";
+						ctx.strokeText("Cool", 16, 59);
+					</script>
+				</section>
+				<section>
+					<h4>Section IX</h4>
+					<p>To change the topic for a moment, did you know California has a state anthem? <a href='https://en.wikipedia.org/wiki/File:%22I_Love_You,_California%22_-_Regional_anthem_of_California.ogg'>Here</a> it is by Abraham Franklin Frankenstein.</p>
+					<video controls>
+						<source src="anthem.ogg" type="audio/ogg">
+						Something went wrong.
+					</video>
+				</section>
+				<section>
+					<h4>Section X</h4>
+					<p>I'm starting to think I should have used the template tag to create all these sections. Instead I'll use it to create some circles.</p>
+					<template>
+						<div style="background-color: #2ecc71; border-radius: 1000pt; padding-top: 60px; width: 20px; height: 20px; padding: 0px; text-align: center; display: inline-block"></div>
+					</template>
+					<div id="circles"></div>
+					<button onclick="makeCircle()">Make a circle</button>
+					<script>
+						var ct = 0;
+						function makeCircle() {
+							template = document.getElementsByTagName('template')[0];
+							item = template.content.querySelector("div");
+							circ = document.importNode(item, true);
+							holder = document.getElementById("circles");
+							circ.textContent += (ct++);
+							holder.appendChild(circ);
+						}
+					</script>
+				</section>
+				<section>
+					<h4>Section XI</h4>
+					<p>You know, I feel like I've talked a lot recently. Why don't you do some talking this now:</p>
+					<form oninput="out.value=slide.value;">
+						<fieldset>
+							<legend>Your turn to talk</legend>
+							<label for="name">What's your name?</label>
+							<input type="text" id="name" name="name"><br>
+							<label for="mtn">Which one of my mountain pictures is your favorite?</label>
+							<select name="mtn" id="mtn">
+								<optgroup label="California Mountains">
+									<option>Mt. Whitney</option>
+									<option>Mt. Shasta</option>
+									<option>El Capitan</option>
+								</optgroup>
+								<optgroup label="Washington Mountains">
+									<option>Mt. Rainier</option>
+								</optgroup>
+							</select>
+							<p>Do you think I should have included the one for El Capitan in the previous question even though it was a movie and not a picture? (Movies are moving pictures after all)</p>
+							<label for="yes">Yes</label>
+							<input type="radio" id="yes">
+							<label for="no">No</label>
+							<input type="radio" id="no"><br />
+							<label for="mtnsT">Do you like mountains?</label>
+							<input list="mtns" id="mtnsT">
+							<datalist id="mtns">
+								<option value="Yes"></option>
+								<option value="No"></option>
+								<option value="Some"></option>.
+							</datalist>
+							<br />
+							<textarea rows="10" cols="30">Want to tell me about your favorite mountains?</textarea>
+							<br />
+							<label for="slide" id="circ">How many circles did you make?</label>
+							<input type="range" id="slide" name="slide" value="0"><output name="out" for="slide">0</output>
+						</fieldset>
+					</form>
+				</section>
+			</article>
+		</main>
+		<footer>
+				<hr>
+				<p>&#9968;</p>
+			</footer>
+	</body>
+</html>
