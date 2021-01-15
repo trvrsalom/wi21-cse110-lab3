@@ -152,9 +152,11 @@ tr:nth-child(even) {
 				</section>
 				<section id="X">
 					<h4>Section X</h4>
-					<p>I'm starting to think I should have used the template tag to create all these sections. Instead I'll use it to create some circles.</p>
+					<p>I'm starting to think I should have used the template tag to create all these sections. Instead I'll use it to create some circles. <em>SVG circles</em>.</p>
 					<template>
-						<div style="background-color: #2ecc71; border-radius: 1000pt; padding-top: 60px; width: 20px; height: 20px; padding: 0px; text-align: center; display: inline-block"></div>
+						<svg width="20" height="20">
+							<circle cx="10" cy="10" r="10" fill="#2ecc71"/>
+						</svg>
 					</template>
 					<div id="circles"></div>
 					<button onclick="makeCircle()">Make a circle</button>
@@ -162,10 +164,10 @@ tr:nth-child(even) {
 						var ct = 0;
 						function makeCircle() {
 							template = document.getElementsByTagName('template')[0];
-							item = template.content.querySelector("div");
+							item = template.content.querySelector("svg");
 							circ = document.importNode(item, true);
 							holder = document.getElementById("circles");
-							circ.textContent += (ct++);
+							//circ.textContent += (ct++);
 							holder.appendChild(circ);
 						}
 					</script>
