@@ -3,7 +3,6 @@
 	<head>
 		<title>Trevor Salom's CSE 110 Lab 2 Page</title>
 		<meta name="author" content="Trevor Salom">
-		<link href="main.css" rel="stylesheet"/>
 	</head>
 	<body>
 		<header>
@@ -66,9 +65,9 @@
 				<section id="V">
 					<h4>Section V</h4>
 					<p>We can even put those mountains in a table</p>
-					<table>
+					<table bgcolor="#000">
 						<colgroup>
-							<col span="2" style="background-color:#bdc3c7">
+							<col span="2" bgcolor="#ffffff">
 						</colgroup>
 						<tr>
 							<th>Mountain</th>
@@ -87,18 +86,27 @@
 				</section>
 				<section id="VI">
 					<h4>Section VI</h4>
-					<p>If you're curious about how I made that table in the previous section look so great, I used this CSS:</p>
+					<p>If you're curious about how I made that table in the previous section look so great, I used this HTML:</p>
 					<div class="code-block">
-						<pre><code>table, th, td {
-	border: 1px solid black;
-	border-collapse: collapse;
-}
-
-tr:nth-child(even) {
-	background-color: #f6f6f6;
-}</code></pre>
+						<pre><code>&lt;table bgcolor=&quot;#000&quot;&gt;
+	&lt;colgroup&gt;
+		&lt;col span=&quot;2&quot; bgcolor=&quot;#ffffff&quot;&gt;
+	&lt;/colgroup&gt;
+	&lt;tr&gt;
+		&lt;th&gt;Mountain&lt;/th&gt;
+		&lt;th&gt;Height (ft)&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Mt. Whitney&lt;/td&gt;&lt;td&gt;14,505&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Mt. Rainier&lt;/td&gt;&lt;td&gt;14,411&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Mt. Shasta&lt;/td&gt;&lt;td&gt;14,179&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
 					</div>
-					<p>Plus a <code>colgroup</code> tag.</p>
 				</section>
 				<section id="VII">
 					<h4>Section VII</h4>
@@ -106,19 +114,19 @@ tr:nth-child(even) {
 					<details>
 						<summary>Mt. Whitney</summary>
 						<picture>
-							<img src="whitney.jpg" alt="whitney"/>
+							<img src="whitney.jpg" width=500px alt="whitney"/>
 						</picture>
 					</details>
 					<details>
 						<summary>Mt. Rainier</summary>
 						<picture>
-							<img src="rainier.JPG" alt="rainier"/>
+							<img src="rainier.JPG" width=500px alt="rainier"/>
 						</picture>
 					</details>
 					<details>
 						<summary>Mt. Shasta</summary>
 						<picture>
-							<img src="shasta.jpg" alt="shasta"/>
+							<img src="shasta.jpg" width=500px alt="shasta"/>
 						</picture>
 					</details>
 					<p>And here is a bonus video from another mountain if you're interested:</p>
