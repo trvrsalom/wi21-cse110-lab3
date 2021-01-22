@@ -84,3 +84,72 @@ tr:hover {
     display: none;
   }
 }
+
+.flexbox {
+	background-color: #3498db;
+	display: flex;
+	align-items: stretch;
+	max-width: 500px;
+}
+
+.flexbox > div {
+	background-color: #1abc9c;
+	color: #fff;
+	padding: 5px;
+	border-radius: 5px;
+	margin: 5px;
+	text-align: center;
+}
+
+.grid > div {
+	background-color: #1abc9c;
+	color: #fff;
+	padding: 5px; 
+	border-radius: 5px;
+	margin: 5px;
+	text-align: center;
+}
+
+.grid > .top { grid-area: top; }
+.grid > .left { grid-area: left; }
+.grid > .right { grid-area: right; }
+.grid > .bottom { grid-area: bottom; }
+
+.grid-parent {
+	height: 110px;
+}
+
+.grid {
+	background-color: #3498db;
+	display: inline-grid;
+	grid-template-columns: 100px 100px 100px;
+	grid-template-rows: auto;
+	grid-template-areas:
+		"top top ."
+		"left . right"
+		". bottom bottom";
+	position: absolute;
+	right: 5px;
+}
+
+@keyframes spin {
+	from {
+		transform:rotate(0deg);
+	}
+	to {
+		transform:rotate(360deg);
+	}
+}
+
+.crab {
+	font-size: 40px;
+	position: fixed;
+	z-index: 99;
+	top: 5px;
+	right: 5px;
+	animation-name: spin;
+	animation-duration: 5000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+
+}
